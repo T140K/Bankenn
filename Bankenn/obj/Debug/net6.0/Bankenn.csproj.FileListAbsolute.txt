@@ -1,0 +1,15 @@
+E:\VS Projects\Bankenn\Bankenn\bin\Debug\net6.0\Bankenn.exe
+E:\VS Projects\Bankenn\Bankenn\bin\Debug\net6.0\Bankenn.deps.json
+E:\VS Projects\Bankenn\Bankenn\bin\Debug\net6.0\Bankenn.runtimeconfig.json
+E:\VS Projects\Bankenn\Bankenn\bin\Debug\net6.0\Bankenn.dll
+E:\VS Projects\Bankenn\Bankenn\bin\Debug\net6.0\Bankenn.pdb
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\Bankenn.csproj.AssemblyReference.cache
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\Bankenn.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\Bankenn.AssemblyInfoInputs.cache
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\Bankenn.AssemblyInfo.cs
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\Bankenn.csproj.CoreCompileInputs.cache
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\Bankenn.dll
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\refint\Bankenn.dll
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\Bankenn.pdb
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\Bankenn.genruntimeconfig.cache
+E:\VS Projects\Bankenn\Bankenn\obj\Debug\net6.0\ref\Bankenn.dll

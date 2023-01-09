@@ -16,7 +16,8 @@ namespace Bankenn
 
             while (true)
             {
-                Console.WriteLine("Welcome, what would you like to do?");
+                Console.Clear();
+                Console.WriteLine("Welcome to your bank, what would you like to do?");
                 Console.WriteLine("1. Login");
                 Console.WriteLine("2. Register");
                 Console.WriteLine("3. Exit");
@@ -27,9 +28,9 @@ namespace Bankenn
                 {
                     Console.Clear();
                     Console.Write("Enter your username: ");
-                    string? inputAcc = Console.ReadLine();
+                    string? inputUser = Console.ReadLine();
                     Console.Write("Enter your password: ");
-                    string? inputPin = Console.ReadLine();
+                    string? inputPass = Console.ReadLine();
 
                     userValidation(users, inputUser, inputPass);
 
@@ -38,6 +39,12 @@ namespace Bankenn
                 {
                     Console.Clear();
                     break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Wrong input! Try again!");
+                    Console.ReadLine();
                 }
             }
 
@@ -60,9 +67,7 @@ namespace Bankenn
                     Console.Clear();
                     Console.WriteLine($"Hello {currentUser._username}, what would you like to do?\n");
                     Console.WriteLine("1. List all accounts");
-                    Console.WriteLine("2. Enter a account");
-                    Console.WriteLine("3. Make a new account");
-                    Console.WriteLine("4. ");
+                    Console.WriteLine("2. Manage your accounts");
                     Console.WriteLine("5. Logout");
 
                     string? option = Console.ReadLine();
@@ -72,11 +77,62 @@ namespace Bankenn
                         Console.Clear();
                         for (int i = 0; i < currentUser._accNames.Length; i++)
                         {
-                            Console.WriteLine("===============================");
-                            Console.WriteLine(currentUser._accNames[i] + ". This account has: " + currentUser._balances[i] + " dollars on it.");
-                            Console.WriteLine("===============================");
+                            Console.WriteLine(currentUser._accNames[i] + ".\nThis account has: " + currentUser._balances[i] + " SEK on it.");
+                            Console.WriteLine("==============================================================");
                         }
+                        Console.WriteLine("\nPress anything to continiue...");
+                        Console.ReadLine();
                     }
+                    if (option == "2")
+                    {
+                        Console.Clear();
+                        while (true)
+                        {
+                            Console.WriteLine("What would you like to do?\n");
+                            Console.WriteLine("1. Deposit money to one of my accoutns");
+                            Console.WriteLine("2. Transfer money between my accounts");
+                            Console.WriteLine("3. Withdraw money from one of my account");
+                            Console.WriteLine("4. Exit");
+
+                            string? subOption = Console.ReadLine();
+
+                            if (subOption == "1")
+                            {
+                                Console.Clear();
+
+                            }
+                            if (subOption == "2")
+                            {
+                                Console.Clear();
+
+                            }
+                            if (subOption == "3")
+                            {
+                                Console.Clear();
+
+                            }
+                            if (subOption == "4")
+                            {
+                                Console.Clear();
+                                break;
+                            }
+                        }
+
+                    }
+                    if (option == "5")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Have a great day!\n");
+                        Console.WriteLine("Press any key to continiue...");
+                        Console.ReadLine();
+                        break;
+                    }
+                    /*if (option != "" || option != " ")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Wrong input! Please select one of the options listed!");
+                        Console.ReadLine();
+                    }*/
                 }
             }
         }
@@ -96,16 +152,6 @@ namespace Bankenn
                 _accNames = accNmes;
                 _pins = pins;
                 _balances = balances;
-            }
-
-            public void GetInfo()
-            {
-                for (int i = 0; i > 3; i++)
-                {
-                    Console.WriteLine($"here is a user with the username {}");
-                }
-;
-
             }
         }
     }
