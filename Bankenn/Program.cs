@@ -98,8 +98,17 @@ namespace Bankenn
 
                             if (subOption == "1")
                             {
+                                //det blir enklare om jag har en metod som validate inputs för accs istället för att ha samma kod om och om igen
                                 Console.Clear();
+                                Console.WriteLine("Log in to the account you want to deposit from");
 
+                                Console.Write("Account name: ");
+                                string inputAcc = Console.ReadLine();
+
+                                Console.Write("Account pin: ");
+                                int inputPin = int.Parse(Console.ReadLine());
+
+                                accInfoValidation(users, inputAcc, inputPin);
                             }
                             if (subOption == "2")
                             {
@@ -115,6 +124,12 @@ namespace Bankenn
                             {
                                 Console.Clear();
                                 break;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Wrong input!");
+                                Console.ReadLine();
                             }
                         }
 
@@ -133,6 +148,13 @@ namespace Bankenn
                         Console.WriteLine("Wrong input! Please select one of the options listed!");
                         Console.ReadLine();
                     }*/
+                }
+            }
+            void accInfoValidation(User[] allAcc, string inputAcc, int inputPin)
+            {
+                foreach (User user in allAcc)
+                {
+                    
                 }
             }
         }
