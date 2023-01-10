@@ -14,11 +14,14 @@ namespace Bankenn
             users[1] = new User("user1", "123456", new string[] { "Allkonto", "Sparkonto", "Investeringskonto" }, new double[] { 300.7, 2445, 0 });
             users[2] = new User("user2", "223344", new string[] { "Allkonto", "Aktier", "arrAB" }, new double[] { 7000, 34000, 700000.67 });
 
+            int attempt = 3;
+
             while (true)
             {
+                
                 Console.Clear();
                 Console.WriteLine("Welcome to your bank, what would you like to do?");
-                Console.WriteLine("1. Login");
+                Console.WriteLine($"1. Login (You have {attempt}s left)");
                 Console.WriteLine("2. Register");
                 Console.WriteLine("3. Exit");
 
@@ -31,13 +34,19 @@ namespace Bankenn
                     string? inputUser = Console.ReadLine();
                     Console.Write("Enter your pin: ");
                     string? inputPass = Console.ReadLine();
-
+                    attempt--;
                     userValidation(users, inputUser, inputPass);
-
                 }
                 if (choice == "3")
                 {
                     Console.Clear();
+                    break;
+                }
+                if (attempt == 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("out of attempts!");
+                    Console.ReadLine();
                     break;
                 }
                 /*else
