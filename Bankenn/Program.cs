@@ -11,9 +11,9 @@ namespace Bankenn
             Console.WriteLine("Hello, World!");
 
             User[] users = new User[3];
-            users[0] = new User("admin", "admin", new string[] { "testkonto1", "testkonto2", "testkonto3" }, new double[] { 25000.55, 0.55, 0 });
-            users[1] = new User("user1", "123456", new string[] { "Allkonto", "Sparkonto", "Investeringskonto" }, new double[] { 300.7, 2445, 0 });
-            users[2] = new User("user2", "223344", new string[] { "Allkonto", "Aktier", "arrAB" }, new double[] { 7000, 34000, 700000.67 });
+            users[0] = new User("admin", "admin", new string[] { "testkonto1", "testkonto2", "testkonto3" }, new decimal[] { 25000.55m, 0.55m, 0m });
+            users[1] = new User("user1", "123456", new string[] { "Allkonto", "Sparkonto", "Investeringskonto" }, new decimal[] { 300.7m, 2445m, 0m });
+            users[2] = new User("user2", "223344", new string[] { "Allkonto", "Aktier", "arrAB" }, new decimal[] { 7000m, 34000m, 700000.67m });
 
             int attempt = 3;
 
@@ -181,7 +181,7 @@ namespace Bankenn
 
                     Console.WriteLine("How much money would you like to withdraw?");
                     Console.Write("===> ");
-                    double withdrawSum = double.Parse(Console.ReadLine());
+                    decimal withdrawSum = decimal.Parse(Console.ReadLine());
 
                     Console.WriteLine("Now enter your pin");
                     Console.Write("===> ");
@@ -224,7 +224,7 @@ namespace Bankenn
 
                 Console.WriteLine("How much money would you like to transfer?");
                 Console.Write("===> ");
-                double transferSum = double.Parse(Console.ReadLine());
+                decimal transferSum = decimal.Parse(Console.ReadLine());
 
 
                 Console.WriteLine("What account would you like to transfer to?");
@@ -269,9 +269,9 @@ namespace Bankenn
             public string _username;
             public string _password;
             public string[] _accNames;
-            public double[] _balances;
+            public decimal[] _balances;
 
-            public User(string username, string password, string[] accNmes, double[] balances)
+            public User(string username, string password, string[] accNmes, decimal[] balances)
             {
                 _username = username;
                 _password = password;
