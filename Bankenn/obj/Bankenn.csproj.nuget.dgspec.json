@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\VS Projects\\Bankenn\\Bankenn\\Bankenn.csproj": {}
+    "C:\\VS project\\Bankenn\\Bankenn\\Bankenn.csproj": {}
   },
   "projects": {
-    "E:\\VS Projects\\Bankenn\\Bankenn\\Bankenn.csproj": {
+    "C:\\VS project\\Bankenn\\Bankenn\\Bankenn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\VS Projects\\Bankenn\\Bankenn\\Bankenn.csproj",
+        "projectUniqueName": "C:\\VS project\\Bankenn\\Bankenn\\Bankenn.csproj",
         "projectName": "Bankenn",
-        "projectPath": "E:\\VS Projects\\Bankenn\\Bankenn\\Bankenn.csproj",
-        "packagesPath": "C:\\Users\\MF DOOM\\.nuget\\packages\\",
-        "outputPath": "E:\\VS Projects\\Bankenn\\Bankenn\\obj\\",
+        "projectPath": "C:\\VS project\\Bankenn\\Bankenn\\Bankenn.csproj",
+        "packagesPath": "C:\\Users\\Yummi\\.nuget\\packages\\",
+        "outputPath": "C:\\VS project\\Bankenn\\Bankenn\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MF DOOM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yummi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
