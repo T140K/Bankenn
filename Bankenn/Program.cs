@@ -8,8 +8,6 @@ namespace Bankenn
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-
             User[] users = new User[3];
             users[0] = new User("admin", "admin", new string[] { "testkonto1", "testkonto2", "testkonto3" }, new decimal[] { 25000.55m, 0.55m, 0m });
             users[1] = new User("user1", "123456", new string[] { "Allkonto", "Sparkonto", "Investeringskonto" }, new decimal[] { 300.7m, 2445m, 0m });
@@ -19,9 +17,8 @@ namespace Bankenn
 
             while (true)
             {
-                
                 Console.Clear();
-                Console.WriteLine("Welcome to your bank, what would you like to do?");
+                Console.WriteLine("Welcome to the bank, what would you like to do?");
                 Console.WriteLine($"1. Login (You have {attempt} attempts left)");
                 Console.WriteLine("2. Register");
                 Console.WriteLine("3. Exit");
@@ -76,13 +73,15 @@ namespace Bankenn
                 while (true)
                 {
                     Console.Clear();
+                    showAccounts(currentUser);
+                    /*
                     Console.WriteLine($"Hello {currentUser._username}, here are your accounts\n");
 
                     for (int i = 0; i < currentUser._accNames.Length; i++)
                     {
                         Console.WriteLine(currentUser._accNames[i] + ".\nThis account has: " + currentUser._balances[i] + " SEK on it.");
-                        /*Console.WriteLine("==============================================================");*/
-                    }
+                        *//*Console.WriteLine("==============================================================");*//*
+                    }*/
                     /*Console.WriteLine("1. List all accounts");*/
                     Console.WriteLine("\nWhat would you like to do?\n");
                     Console.WriteLine("2. Manage your accounts");
@@ -161,13 +160,7 @@ namespace Bankenn
             {
                 while (true)
                 {
-                    Console.WriteLine($"Hello {user._username}. Please select an account below:");
-                    // skriv en for loop som går från 0 till user._acccountNames.Length
-                    // Skriv ut index + 1 följt av kontonamn förljt av kontoindex
-                    for (int i = 0; i < user._accNames.Length; i++)
-                    {
-                        Console.WriteLine($"{i + 1}. {user._accNames[i]}: {user._balances[i]}");
-                    }
+                    showAccounts(user);
 
                     // fråga om en summa du vlil ta ut
                     // fråga om pincod
@@ -209,13 +202,7 @@ namespace Bankenn
             void transferMoney(User transferUser)
             {
                 Console.Clear();
-                Console.WriteLine($"Hello {transferUser._username}. Please select from the accounts below:");
-                // skriv en for loop som går från 0 till user._acccountNames.Length
-                // Skriv ut index + 1 följt av kontonamn förljt av kontoindex
-                for (int i = 0; i < transferUser._accNames.Length; i++)
-                {
-                    Console.WriteLine($"{i + 1}. {transferUser._accNames[i]}: {transferUser._balances[i]}");
-                }
+                showAccounts(transferUser);
 
                 Console.WriteLine("USE , not . !!! \n \n What account do you want to transfer money from?");
                 Console.Write("===> ");
@@ -228,6 +215,7 @@ namespace Bankenn
 
 
                 Console.WriteLine("What account would you like to transfer to?");
+                Console.Write("===> ");
                 int transferTarget = int.Parse(Console.ReadLine());
                 int transferT = transferTarget - 1;
 
@@ -244,11 +232,11 @@ namespace Bankenn
                     }
                     else
                     {
+                        Console.Clear();
                         transferUser._balances[withdrawChoice] -= transferSum;
                         transferUser._balances[transferT] += transferSum;
                         Console.WriteLine("Done! Press enter to continiue");
                         Console.ReadLine();
-                        
                     }
                 }
             }
@@ -259,7 +247,7 @@ namespace Bankenn
                 // Skriv ut index + 1 följt av kontonamn förljt av kontoindex
                 for (int i = 0; i < user._accNames.Length; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {user._accNames[i]}: {user._balances[i]}");
+                    Console.WriteLine($"{i + 1}. {user._accNames[i]}: {user._balances[i]}\n");
                 }
             }
         }
