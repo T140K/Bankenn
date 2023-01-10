@@ -106,6 +106,7 @@ namespace Bankenn
                         Console.Clear();
                         while (true)
                         {
+                            Console.Clear();
                             showAccounts(currentUser);
 
                             Console.WriteLine("\nWhat would you like to do?\n");
@@ -207,6 +208,7 @@ namespace Bankenn
             }
             void transferMoney(User transferUser)
             {
+                Console.Clear();
                 Console.WriteLine($"Hello {transferUser._username}. Please select from the accounts below:");
                 // skriv en for loop som går från 0 till user._acccountNames.Length
                 // Skriv ut index + 1 följt av kontonamn förljt av kontoindex
@@ -238,6 +240,7 @@ namespace Bankenn
                     if (transferSum > transferUser._balances[withdrawChoice])
                     {
                         Console.WriteLine("insufficient funds!");
+                        Console.ReadLine();
                     }
                     else
                     {
