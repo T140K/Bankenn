@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Principal;
+using static Bankenn.Program;
 
 namespace Bankenn
 {
@@ -21,7 +22,7 @@ namespace Bankenn
                 
                 Console.Clear();
                 Console.WriteLine("Welcome to your bank, what would you like to do?");
-                Console.WriteLine($"1. Login (You have {attempt}s left)");
+                Console.WriteLine($"1. Login (You have {attempt} attempts left)");
                 Console.WriteLine("2. Register");
                 Console.WriteLine("3. Exit");
 
@@ -71,6 +72,7 @@ namespace Bankenn
 
             void userValidated(User currentUser)
             {
+                attempt = 3;
                 while (true)
                 {
                     Console.Clear();
@@ -203,7 +205,47 @@ namespace Bankenn
             }
             void transferMoney(User transferUser)
             {
+                Console.WriteLine($"Hello {transferUser._username}. Please select from the accounts below:");
+                // skriv en for loop som går från 0 till user._acccountNames.Length
+                // Skriv ut index + 1 följt av kontonamn förljt av kontoindex
+                for (int i = 0; i < transferUser._accNames.Length; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {transferUser._accNames[i]}: {transferUser._balances[i]}");
+                }
 
+                Console.WriteLine("USE , not . !!! \n \n What account do you want to transfer money from?");
+                Console.Write("===> ");
+                int withdrawOpt = int.Parse(Console.ReadLine());
+                int withdrawChoice = withdrawOpt - 1;
+
+                Console.WriteLine("How much money would you like to transfer?");
+                Console.Write("===> ");
+                double transferSum = double.Parse(Console.ReadLine());
+
+
+                Console.WriteLine("What account would you like to transfer to?");
+                int transferTarget = int.Parse(Console.ReadLine());
+                int transferT = transferTarget - 1;
+
+                Console.WriteLine("Now enter your pin");
+                Console.Write("===> ");
+                string inputPin = Console.ReadLine();
+
+                if (inputPin == transferUser._password)
+                {
+                    if (transferSum < transferUser._balances[withdrawChoice])
+                    {
+                        Console.WriteLine("insufficient funds!");
+                    }
+                    else
+                    {
+                        transferUser._balances[withdrawChoice] -= transferSum;
+                        transferUser._balances[transferT] += transferSum;
+                        Console.WriteLine("Done! Press enter to continiue");
+                        Console.ReadLine();
+                        
+                    }
+                }
             }
         }
 
